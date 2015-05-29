@@ -119,7 +119,7 @@ All of the [CasperJS modules](http://docs.casperjs.org/en/latest/modules/index.h
 ## Casper Test API
 
 The Casper Test module is very similar, but has a few subtle differences.  First, construct the spec (test) file by
-creating a folder and file test/example.spec.js with the following:
+creating a folder and file tests/example.spec.js with the following:
 ```javascript
 casper.test.begin('Google search retrieves 10 or more results', 2, function suite(test) {
     casper.start("http://www.google.com/", function() {
@@ -136,7 +136,7 @@ casper.test.begin('Google search retrieves 10 or more results', 2, function suit
 ```
 and then you run the test using:
 ```
-$ casperjs test
+$ casperjs test example.js
 ```
 
 Note that Casper needs to know that you want to run the test module, and by default it will look for a folder called
@@ -144,7 +144,7 @@ test, and attempt to run all files in the test folder that have the .js extensio
 
 or you can specify the spec file(s), you would like to run:
 ```
-$ casperjs test/example.spec.js
+$ casperjs test tests
 ```
 
 Expect the tests to pass since there are more than 10 results in google when searching for San Diego Code School.
